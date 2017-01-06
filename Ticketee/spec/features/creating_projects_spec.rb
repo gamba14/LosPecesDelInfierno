@@ -19,4 +19,14 @@ RSpec.feature "Los usuarios pueden crear nuevos proyectos" do
 
 
 	end	
+	scenario "Cuando los usuarios mandan fruta" do
+		visit "/"
+
+		click_link "New Project"
+
+		click_button "Create Project"
+
+		expect(page) .to have_content "Project has not been created."
+		expect(page) .to have_content "Name can't be blank"
+	end
 end
