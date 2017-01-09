@@ -16,3 +16,97 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+@import "projects";
+
+
+.page-header{
+	position: relative;
+	paddig-bottom: 0px;
+
+	&:first-child {
+		margin-top: 20px;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+	max-width: 55%;
+	}
+}
+
+ul.actions {
+	@extend .list-unstyled;
+	@extend .list-inline;
+	postion: absolute;
+	bottom: -2px;
+	rigth: 2px;
+	max-width: 45%;
+	text-align: rigth;
+}
+
+a.new {
+	@extend .btn;
+	@extend .btn-success;
+
+	&:before {
+	font-family: "FontAwesome";
+	@extend .fa-plus;
+	padding-right :0.5em;
+	}
+}
+
+a.edit {
+	@extend .btn;
+	@extend .btn-primary;
+
+	&:before {
+	font-family: "FontAwesome";
+	@extend .fa-pencil;
+	padding-rigth: 0.5em;
+	}	
+}
+
+a.delete {
+	@extend .btn;
+	@extend .btn-danger;
+
+	&:before {
+	font-family: "FontAwesome";
+	@extend .fa-trash;
+	padding-rigth: 0.5em;
+	}
+}
+
+a.home {
+	@extend .btn;
+	@extend .btn-success;
+
+	&:before {
+	font-family: "FontAwesome";
+	@exend .fa-home;
+	padding-right: 0.5 em;
+	}
+}
+
+header {
+	@extend .page-header;
+	position: relative;
+	padding-bottom: 0px;
+	&:first-child {
+	margin-top: 20px;
+	}
+}
+
+.alert-notice {
+	@extend .alert-success;
+}
+
+.alert-alert {
+	@extend .alert-danger;
+}
+
+form {
+	max-width: 500px;
+}
+
+body {
+	padding-top: 70px;
+}
