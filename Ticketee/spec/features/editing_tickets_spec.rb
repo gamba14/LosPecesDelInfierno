@@ -17,6 +17,12 @@ RSpec.feature "Los usuarios pueden crear nuevos proyectos" do
 		click_link "Make it shiny!"
 
 		click_link "Edit Ticket"
+
+		let(:author) {FactoryGirl.create(:user)}
+		let(:project) {FactoryGirl.create(:project)}
+		let(:ticket) do
+			FactoryGirl.create(:ticket, project: project, author: author)
+		end
 	end
 
 	scenario "para un proyecto dado" do

@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.feature "los usuarios pueden iniciar sesion" do 
-	let(:user) { FactoryGirl.create(:user) }
+	let!(:user) { FactoryGirl.create(:user) }
 
 	scenario "con credenciales validas" do
 

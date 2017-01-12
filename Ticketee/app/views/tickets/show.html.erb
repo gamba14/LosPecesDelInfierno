@@ -6,6 +6,12 @@
 			<li>
 				<%= link_to "Edit Ticket", [:edit, @project, @ticket], class: "edit" %>
 			</li>
+			<li>
+				<%= link_to "Delete Ticket", [@project, @ticket], method: :delete, data: 
+				{confirm: "Esta seguro?"}, class: "delete" %>
+			</li>
+
+			
 		</ul>
 	</header>
 
@@ -13,6 +19,18 @@
 		<h2>
 			<%= @ticket.name %>	
 		</h2>
+
+		<table id="attributes">
+			<tr>
+				<th>Author:</th>
+				<td><%= @ticket.author.email %></td>
+			</tr>
+			<tr>
+				<th>Created:</th>
+				<td><%= time_ago_in_words(@ticket.created_at) %></td>
+			</tr>
+
+		</table>
 	</header>
 
 	
