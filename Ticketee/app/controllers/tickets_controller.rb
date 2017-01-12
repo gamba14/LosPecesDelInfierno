@@ -12,7 +12,7 @@ class TicketsController < ApplicationController
 
 		if @ticket.save 
 			flash[:notice] = "Ticket has been created."
-			redirect_to [@project, @ticket]
+			redirect_to [@project]
 		else
 			flash.now[:alert] = "Ticket has not been created."
 			render "new"
@@ -20,6 +20,20 @@ class TicketsController < ApplicationController
 	end
 
 	def show
+	end
+
+	def edit
+
+	end
+
+	def update
+		if @ticket.update(ticket_params)
+			flash[:notice] = "Ticket has been updated."
+			redirect_to [@project, @ticket]
+		else
+			flash.now[:alert] = "Ticket has not been updated."
+			render "edit"
+		end
 	end
 
 
