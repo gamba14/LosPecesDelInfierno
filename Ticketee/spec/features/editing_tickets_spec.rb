@@ -1,28 +1,35 @@
 require "rails_helper"
 
 RSpec.feature "Los usuarios pueden crear nuevos proyectos" do 
-	before do
-		sublime = FactoryGirl.create(:project, name: "Sublime Text 3")
-		FactoryGirl.create(:ticket, project: sublime, name: "Make it shiny!",
-		description: "Gradients! Starbursts! Oh My!")
 
-		ie = FactoryGirl.create(:project, name: "Internet Explorer")
-		FactoryGirl.create(:ticket, project: ie,
-		name: "Standards compliance", description: "Isn't a joke.")
-		
-		visit "/"
 
-		click_link "Sublime Text 3"
-
-		click_link "Make it shiny!"
-
-		click_link "Edit Ticket"
-
-		let(:author) {FactoryGirl.create(:user)}
+	let(:author) {FactoryGirl.create(:user)}
 		let(:project) {FactoryGirl.create(:project)}
 		let(:ticket) do
 			FactoryGirl.create(:ticket, project: project, author: author)
 		end
+
+	before do
+		#sublime = FactoryGirl.create(:project, name: "Sublime Text 3")
+		#FactoryGirl.create(:ticket, project: sublime, name: "Make it shiny!",
+		#description: "Gradients! Starbursts! Oh My!")
+#
+#		#ie = FactoryGirl.create(:project, name: "Internet Explorer")
+#		#FactoryGirl.create(:ticket, project: ie,
+#		#name: "Standards compliance", description: "Isn't a joke.")
+#		#
+#		#visit "/"
+#
+#		#click_link "Sublime Text 3"
+#
+#		#click_link "Make it shiny!"
+#
+		#click_link "Edit Ticket"
+
+		visit project_ticket_path(project, ticket)
+		click_link "Edit Ticket"
+
+		
 	end
 
 	scenario "para un proyecto dado" do
