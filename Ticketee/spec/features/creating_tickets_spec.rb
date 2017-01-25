@@ -16,9 +16,10 @@ RSpec.feature "los usuarios pueden crear nuevos tickets" do
 		click_button "Create Ticket"
 
 		expect(page).to have_content "Ticket has been created."
-		within("#ticket") do
-			expect(page) .to have_content "Author: #{user.email}"
-		end		
+
+		click_link "Non-standards compliance"
+		expect(page) .to have_content "Author: #{user.email}"
+				
 	end
 
 	scenario "y los atributos no son validos" do
