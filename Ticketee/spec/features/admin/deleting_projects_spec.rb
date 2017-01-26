@@ -1,6 +1,10 @@
 require "rails_helper"
 
 RSpec.feature "Los usuarios pueden eliminar proyectos" do 
+
+	before do
+		login_as(FactoryGirl.create(:user, :admin))
+	end
 	scenario "exito" do
 		FactoryGirl.create(:project, name: "Sublime Text 3")
 
