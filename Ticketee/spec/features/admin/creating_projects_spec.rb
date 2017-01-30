@@ -3,7 +3,7 @@ RSpec.feature "Los usuarios pueden crear nuevos proyectos" do
 	before do
 		login_as(FactoryGirl.create(:user, :admin))
 	end
-	scenario "with valid attributes" do
+	scenario "con informacion valida" do
 		visit "/"
 
 		click_link "New Project"
@@ -22,7 +22,7 @@ RSpec.feature "Los usuarios pueden crear nuevos proyectos" do
 
 
 	end	
-	scenario "Cuando los usuarios mandan fruta" do
+	scenario "pero la informacion no es valida" do
 		visit "/"
 
 		click_link "New Project"

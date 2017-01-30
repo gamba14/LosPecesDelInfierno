@@ -3,11 +3,14 @@
 		<% title(@project.name, "Projects") %>
 		<ul class="actions">
 		<li><%= link_to "Edit Project", edit_project_path(@project), class: "edit" %></li>
+		<% admins_only do %>
 		<li><%= link_to "Delete Project", 
 				admin_project_path(@project), 
 				method: :delete,
 				data: { confirm: "Seguro que desea eleminar proyecto?" },
-				class: "delete"	%>
+				class: "delete"	%></li>
+		<% end %>
+		</ul>
 
 		
 

@@ -5,7 +5,7 @@ RSpec.feature "Los usuarios pueden eliminar proyectos" do
 	before do
 		login_as(FactoryGirl.create(:user, :admin))
 	end
-	scenario "exito" do
+	scenario "con exito" do
 		FactoryGirl.create(:project, name: "Sublime Text 3")
 
 		visit "/"
