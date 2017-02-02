@@ -1,4 +1,8 @@
 class Admin::UsersController < Admin::ApplicationController
+
+  def show
+  end
+
   def index
   	@users = User.order(:email)
   end
@@ -20,7 +24,7 @@ class Admin::UsersController < Admin::ApplicationController
   end
 private
 	def user_params
-		params.require(:user) .permit(:email, :password)
+		params.require(:user) .permit(:email, :password, :admin)
 	end
 
 end
