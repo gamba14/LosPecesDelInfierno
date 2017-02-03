@@ -1,6 +1,4 @@
-class Admin::ProjectsController < Admin::ApplicationController
-
-	
+class Admin::ProjectsController < Admin::ApplicationController	
 
 	
 	def new
