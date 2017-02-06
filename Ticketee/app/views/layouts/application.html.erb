@@ -29,6 +29,16 @@
           <span class="icon-bar"></span>
           </button>
         </div>
+           <% if user_signed_in? %>
+         <div class= "navbar-right">
+           <p class= "navbar-text">
+             <small>Signed in as <%= current_user.email %></small>
+           </p>
+           <ul class = "nav navbar-nav">
+           <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+          </ul>
+        </div>
+        <% end %>
         <div class="collapse navbar-collapse" id="collapse">
           <ul class="nav navbar-nav">
             <li class="<%= "active" if current_page?("/") %>">
@@ -44,20 +54,11 @@
             <li class="<% "active" if current_page?("/users/sign_in") %>">
               <%= link_to "Sign in", new_user_session_path %>
             </li>
-          <% end %>
+          <% end %>          
           </ul>
-        </div>
+        </div>        
     </div>
-    <% if user_signed_in? %>
-      <div class= "navbar-right">
-        <p class= "navbar-text">
-          <small>Signed in as <%= current_user.email %></small>
-        </p>
-        <ul class = "nav navbar-nav">
-        <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
-       </ul>
-     </div>
-    <% end %>
+    
 </nav>
 
 
